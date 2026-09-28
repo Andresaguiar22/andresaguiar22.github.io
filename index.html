@@ -5,28 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PanaLink</title>
     <style>
+        :root { color-scheme: dark; }
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #171D29;
+            background: radial-gradient(circle at 80% 0%, #1E2A3D 0%, #171D29 45%, #0F141D 100%);
             color: #F0E4C8;
-            display: flex;
             min-height: 100vh;
+            display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
         main { padding: 24px; max-width: 560px; }
-        h1 { font-size: 2.4rem; margin: 0 0 12px; }
-        p { color: #A2A6AD; line-height: 1.6; }
-        a { color: #5CF8B0; }
+        h1 { font-size: 2.6rem; margin: 0 0 12px; letter-spacing: 0.5px; }
+        p { color: #A2A6AD; line-height: 1.7; }
+        nav {
+            margin-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        nav a {
+            color: #5CF8B0;
+            text-decoration: none;
+            border: 1px solid #2A3140;
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+        }
+        nav a:hover { border-color: #5CF8B0; }
     </style>
 </head>
 <body>
     <main>
         <h1>PanaLink</h1>
         <p>Sitio oficial de PanaLink. Aplicación de mensajería, momentos y comunidad.</p>
-        <p>Contacto: <a href="https://github.com/Andresaguiar22">github.com/Andresaguiar22</a></p>
+        <nav>
+            <a href="/privacidad.html">Política de Privacidad</a>
+            <a href="/terminos.html">Términos y Condiciones</a>
+            <a href="/contacto.html">Contacto</a>
+        </nav>
     </main>
 </body>
 </html>
+
