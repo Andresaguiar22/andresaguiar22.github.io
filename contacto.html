@@ -1,66 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto — PanaLink</title>
-    <style>
-        :root { color-scheme: dark; }
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #171D29;
-            color: #E8E8EA;
-            line-height: 1.7;
-        }
-        header { padding: 28px 20px; border-bottom: 1px solid #2A3140; text-align: center; }
-        header a { color: #5CF8B0; text-decoration: none; font-weight: 600; }
-        main { max-width: 640px; margin: 0 auto; padding: 28px 20px 80px; }
-        h1 { color: #F0E4C8; font-size: 1.9rem; }
-        h2 { color: #F0E4C8; font-size: 1.2rem; margin-top: 32px; }
-        p, li { color: #C6CBD5; }
-        a { color: #5CF8B0; }
-        .card {
-            background: #1F2634;
-            border: 1px solid #2A3140;
-            border-radius: 14px;
-            padding: 20px 22px;
-            margin-top: 18px;
-        }
-        footer { text-align: center; padding: 24px; color: #8E8E93; font-size: 0.85rem; border-top: 1px solid #2A3140; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — PanaLink</title>
+<meta name="description" content="Contacta con el equipo de PanaLink: soporte, reportes de fallos, ideas, colaboración y solicitudes de privacidad.">
+<meta name="theme-color" content="#0B0F16">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%235CF8B0'/><text x='50' y='72' font-size='64' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%230B0F16'>P</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-    <header><a href="/">PanaLink</a></header>
-    <main>
-        <h1>Contacto</h1>
-        <p>¿Tienes dudas, reportas un problema o quieres ejercer tus derechos sobre tus datos?
-        Escríbenos.</p>
 
-        <div class="card">
-            <h2 style="margin-top:0">Desarrollador</h2>
-            <p>Andresaguiar22 — PanaLink</p>
-            <p>Soporte y consultas:
-                <a href="https://github.com/Andresaguiar22" target="_blank" rel="noopener">github.com/Andresaguiar22</a>
-            </p>
-        </div>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="atmos" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
-        <div class="card">
-            <h2 style="margin-top:0">Privacidad y datos</h2>
-            <p>Para solicitudes de acceso, rectificación o eliminación de datos, indícanos el correo
-            con el que te registraste. Consulta también nuestra
-            <a href="/privacidad.html">Política de Privacidad</a>.</p>
-        </div>
+<nav class="top">
+  <div class="in">
+    <a class="mark" href="/"><span class="p">P</span>PanaLink</a>
+    <span class="sp"></span>
+    <span class="lk">
+      <a href="/">Inicio</a>
+      <a href="/historia.html">Historia</a>
+      <a href="/colabora.html">Colabora</a>
+      <a href="/contacto.html" aria-current="page">Contacto</a>
+      <a class="cta-sm" href="/descargar.html">Descargar</a>
+    </span>
+  </div>
+</nav>
 
-        <div class="card">
-            <h2 style="margin-top:0">Reportar contenido</h2>
-            <p>Puedes reportar contenido directamente desde la App. Para casos urgentes, contáctanos
-            e incluye una descripción y, si es posible, el enlace o captura del contenido.</p>
-        </div>
-    </main>
-    <footer>
-        <a href="/">Inicio</a> · <a href="/privacidad.html">Privacidad</a> ·
-        <a href="/terminos.html">Términos</a> · <a href="/contacto.html">Contacto</a>
-    </footer>
+<div class="wrap narrow">
+
+  <header class="hero left">
+    <span class="eyebrow rv"><span class="dot"></span>Estamos para escucharte</span>
+    <h1 class="page rv d1">Contacto</h1>
+    <p class="sub rv d2">¿Tienes una duda, encontraste un fallo o quieres aportar una idea? <b>Escríbenos directamente</b>.</p>
+  </header>
+
+  <section style="padding-top:14px">
+
+    <div class="contact-card rv d1">
+      <div class="ic">✉️</div>
+      <div>
+        <h3>Correo</h3>
+        <p>Para soporte, reportes, ideas, colaboración o temas de privacidad. Es la vía más segura: queda registrado y lo revisamos con calma.</p>
+        <p style="margin-top:8px"><a class="val" href="mailto:andresaguiar2022@gmail.com">andresaguiar2022@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="contact-card rv d2">
+      <div class="ic">📞</div>
+      <div>
+        <h3>Teléfono</h3>
+        <p>Para consultas directas y casos urgentes, en horario de Venezuela.</p>
+        <p style="margin-top:8px"><a class="val" href="tel:+584262780191">0426-278-0191</a></p>
+      </div>
+    </div>
+
+    <div class="contact-card rv d3">
+      <div class="ic">🐙</div>
+      <div>
+        <h3>GitHub</h3>
+        <p>Versiones publicadas, historial de cambios y, si eres desarrollador, el punto de contacto técnico.</p>
+        <p style="margin-top:8px"><a class="val" href="https://github.com/Andresaguiar22" target="_blank" rel="noopener">github.com/Andresaguiar22</a></p>
+      </div>
+    </div>
+
+    <h2 class="sec rv d1" style="margin-top:46px">¿Qué puedes contarnos?</h2>
+    <p class="lead rv d1">Todo esto nos sirve. Cuanto más concreto sea el mensaje, más rápido lo podemos resolver.</p>
+
+    <ul class="ticks rv d2">
+      <li><b>Un fallo:</b> cuéntanos qué hiciste, qué esperabas y qué pasó. Si puedes, dinos qué teléfono usas y en qué versión de PanaLink estabas.</li>
+      <li><b>Una idea o mejora:</b> qué te gustaría ver y para qué te serviría.</li>
+      <li><b>Una crítica:</b> qué no te gusta y por qué. La crítica honesta es la que nos hace mejorar.</li>
+      <li><b>Colaboración:</b> si programas, diseñas, traduces o quieres ayudar, mira la página de <a href="/colabora.html">Colabora</a>.</li>
+      <li><b>Privacidad:</b> solicitudes de acceso, corrección o eliminación de tus datos.</li>
+      <li><b>Contenido:</b> para reportar algo que no debería estar publicado. También puedes hacerlo desde la propia app.</li>
+    </ul>
+
+    <div class="panel rv d3" style="margin-top:34px">
+      <h3>Sobre los tiempos de respuesta</h3>
+      <p>PanaLink lo sostiene <b>un equipo muy pequeño</b>, así que a veces tardamos más de lo que quisiéramos en responder. No ignoramos nada: leemos todo y lo vamos atendiendo por orden de importancia. <b>Gracias por la paciencia.</b></p>
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+  <div class="cols">
+    <div>
+      <div class="brandline"><span class="mark" style="font-size:1.1rem"><span class="p" style="width:30px;height:30px;font-size:1rem">P</span>PanaLink</span></div>
+      <p style="color:var(--muted);font-size:.9rem;margin:0">Mensajería, momentos y comunidad. Aplicación venezolana en desarrollo activo, hecha con la comunidad.</p>
+    </div>
+    <div>
+      <h4>Sitio</h4>
+      <div class="lk">
+        <a href="/">Inicio</a>
+        <a href="/historia.html">Historia</a>
+        <a href="/colabora.html">Colabora</a>
+        <a href="/descargar.html">Descargar</a>
+      </div>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <div class="lk">
+        <a href="mailto:andresaguiar2022@gmail.com">andresaguiar2022@gmail.com</a>
+        <a href="tel:+584262780191">0426-278-0191</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/terminos.html">Términos</a>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    © <span id="yr">2026</span> PanaLink — hecho con cariño desde Venezuela 🇻🇪
+    <div class="ai">Sitio mantenido con ayuda de un agente de IA (OpenHands).</div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
 </html>

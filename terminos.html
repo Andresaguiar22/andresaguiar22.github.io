@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones — PanaLink</title>
-    <style>
-        :root { color-scheme: dark; }
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #171D29;
-            color: #E8E8EA;
-            line-height: 1.7;
-        }
-        header { padding: 28px 20px; border-bottom: 1px solid #2A3140; text-align: center; }
-        header a { color: #5CF8B0; text-decoration: none; font-weight: 600; }
-        main { max-width: 760px; margin: 0 auto; padding: 28px 20px 80px; }
-        h1 { color: #F0E4C8; font-size: 1.9rem; }
-        h2 { color: #F0E4C8; font-size: 1.2rem; margin-top: 32px; }
-        p, li { color: #C6CBD5; }
-        a { color: #5CF8B0; }
-        .updated { color: #8E8E93; font-size: 0.9rem; }
-        footer { text-align: center; padding: 24px; color: #8E8E93; font-size: 0.85rem; border-top: 1px solid #2A3140; }
-    </style>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-    <header><a href="/">PanaLink</a></header>
-    <main>
+<nav class="top">
+  <div class="in">
+    <a class="mark" href="/"><span class="p">P</span>PanaLink</a>
+    <span class="sp"></span>
+    <span class="lk">
+      <a href="/">Inicio</a>
+      <a href="/historia.html">Historia</a>
+      <a href="/colabora.html">Colabora</a>
+      <a href="/contacto.html">Contacto</a>
+      <a class="cta-sm" href="/descargar.html">Descargar</a>
+    </span>
+  </div>
+</nav>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="atmos" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+    
+    <div class="wrap narrow" style="padding-top:34px">
+<main>
         <h1>Términos y Condiciones de Uso</h1>
         <p class="updated">Última actualización: 28 de septiembre de 2026</p>
 
@@ -81,9 +86,40 @@
         <p>Estos términos se rigen por las leyes aplicables en el país de residencia del titular del
         servicio, sin perjuicio de los derechos que la ley reconozca a los consumidores.</p>
     </main>
+</div>
     <footer>
-        <a href="/">Inicio</a> · <a href="/privacidad.html">Privacidad</a> ·
-        <a href="/terminos.html">Términos</a> · <a href="/contacto.html">Contacto</a>
-    </footer>
+  <div class="cols">
+    <div>
+      <div class="brandline"><span class="mark" style="font-size:1.1rem"><span class="p" style="width:30px;height:30px;font-size:1rem">P</span>PanaLink</span></div>
+      <p style="color:var(--muted);font-size:.9rem;margin:0">Mensajería, momentos y comunidad. Aplicación venezolana en desarrollo activo, hecha con la comunidad.</p>
+    </div>
+    <div>
+      <h4>Sitio</h4>
+      <div class="lk">
+        <a href="/">Inicio</a>
+        <a href="/historia.html">Historia</a>
+        <a href="/colabora.html">Colabora</a>
+        <a href="/descargar.html">Descargar</a>
+      </div>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <div class="lk">
+        <a href="mailto:andresaguiar2022@gmail.com">andresaguiar2022@gmail.com</a>
+        <a href="tel:+584262780191">0426-278-0191</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/terminos.html">Términos</a>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    © <span id="yr">2026</span> PanaLink — hecho con cariño desde Venezuela 🇻🇪
+    <div class="ai">Sitio mantenido con ayuda de un agente de IA (OpenHands).</div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
 </html>
+

@@ -1,94 +1,276 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PanaLink</title>
-    <style>
-        :root { color-scheme: dark; }
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: radial-gradient(circle at 80% 0%, #1E2A3D 0%, #171D29 45%, #0F141D 100%);
-            color: #F0E4C8;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        main { padding: 24px; max-width: 560px; }
-        h1 { font-size: 2.6rem; margin: 0 0 12px; letter-spacing: 0.5px; }
-        p { color: #A2A6AD; line-height: 1.7; }
-        nav {
-            margin-top: 32px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        nav a {
-            color: #5CF8B0;
-            text-decoration: none;
-            border: 1px solid #2A3140;
-            border-radius: 999px;
-            padding: 10px 18px;
-            font-size: 0.95rem;
-        }
-        nav a:hover { border-color: #5CF8B0; }
-        .notice {
-            margin-top: 28px;
-            text-align: left;
-            background: rgba(92,248,176,.06);
-            border: 1px solid #2A3140;
-            border-left: 3px solid #5CF8B0;
-            border-radius: 14px;
-            padding: 18px 20px;
-        }
-        .notice h2 {
-            margin: 0 0 8px;
-            font-size: 1rem;
-            color: #5CF8B0;
-            letter-spacing: .3px;
-        }
-        .notice p { margin: 8px 0; font-size: .95rem; }
-        .thanks { margin-top: 22px; font-size: .95rem; color: #F0E4C8; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PanaLink — Mensajería, momentos y comunidad</title>
+<meta name="description" content="PanaLink: mensajería, momentos, reels, salas de voz y Live. Aplicación venezolana en desarrollo activo, hecha con la comunidad. Descarga el APK oficial gratis.">
+<meta name="theme-color" content="#0B0F16">
+<meta property="og:title" content="PanaLink — Mensajería, momentos y comunidad">
+<meta property="og:description" content="Aplicación en desarrollo activo, hecha con la comunidad. Descarga el APK oficial.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%235CF8B0'/><text x='50' y='72' font-size='64' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%230B0F16'>P</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-    <main>
-        <h1>PanaLink</h1>
-        <p>Sitio oficial de PanaLink. Aplicación de mensajería, momentos y comunidad.</p>
-        <nav>
-            <a href="/descargar.html" style="background:#5CF8B0;color:#0F141D;border-color:#5CF8B0;font-weight:700">⬇ Descargar</a>
-            <a href="/privacidad.html">Política de Privacidad</a>
-            <a href="/terminos.html">Términos y Condiciones</a>
-            <a href="/contacto.html">Contacto</a>
-        </nav>
 
-        <div class="notice">
-            <h2>🚧 PanaLink está en desarrollo</h2>
-            <p>
-                PanaLink la estamos construyendo <strong>en público y paso a paso</strong>. Es una
-                aplicación <strong>en desarrollo activo</strong>, así que es posible que encuentres
-                fallos, funciones a medias o cosas que aún no se comportan como esperas.
-            </p>
-            <p>
-                No lo escondemos: preferimos decírtelo claro. Cada versión que publicamos corrige lo
-                que ustedes nos reportan, y por eso <strong>tu ayuda cuenta de verdad</strong>.
-            </p>
-            <p>
-                Si algo te falla, si algo te gusta o si tienes una idea para mejorarla, escríbenos:
-                tus aportes y tus críticas son los que nos dicen por dónde seguir. Cada reporte
-                ayuda a que la próxima versión sea mejor.
-            </p>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="atmos" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="top">
+  <div class="in">
+    <a class="mark" href="/"><span class="p">P</span>PanaLink</a>
+    <span class="sp"></span>
+    <span class="lk">
+      <a href="/" aria-current="page">Inicio</a>
+      <a href="/historia.html">Historia</a>
+      <a href="/colabora.html">Colabora</a>
+      <a href="/contacto.html">Contacto</a>
+      <a class="cta-sm" href="/descargar.html">Descargar</a>
+    </span>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow rv"><span class="dot"></span>App venezolana · en desarrollo activo</span>
+    <h1 class="big rv d1">PanaLink</h1>
+    <p class="sub rv d2">Mensajería, <b>momentos</b>, reels y salas de voz.<br>De pana, para panitas. 🇻🇪</p>
+
+    <div class="actions rv d3">
+      <a class="btn btn-main" href="/descargar.html">⬇ Descargar PanaLink</a>
+      <a class="btn btn-ghost" href="#app">Conocer la app</a>
+    </div>
+
+    <p class="meta rv d4">
+      Versión <strong>v1.4.7</strong> · Android 7.0+ · ~84 MB · APK oficial gratis
+    </p>
+  </header>
+
+  <!-- ============ AVISO DE DESARROLLO ============ -->
+  <section style="padding-top:10px">
+    <div class="dev rv">
+      <h2>🚧 PanaLink está en desarrollo</h2>
+      <p>Te lo decimos claro y sin vueltas: PanaLink la construye <b>un equipo muy pequeño</b>, casi a pulso, y todavía <b>no está terminada</b>. Es una aplicación <b>en desarrollo activo</b>, así que puede tener fallos, funciones a medias o cosas que todavía no se comportan como esperas.</p>
+      <p>Preferimos contártelo antes de que lo descubras tú. Cada versión que publicamos corrige lo que la gente nos reporta, y por eso <b>tus aportes y tus críticas son la mejor herramienta que tenemos</b> para mejorarla.</p>
+      <p>Si algo te falla, si algo te gusta o si se te ocurre una idea, cuéntanoslo: <a href="/contacto.html">escríbenos aquí</a>. Cada reporte ayuda a que la próxima versión sea mejor.</p>
+
+      <div class="beta-note">
+        <span class="tag">🧪 Modo beta de producción</span>
+        <p>Algunas funciones todavía están <b>en modo beta de producción</b>: ya las puedes usar, pero aún no están terminadas ni del todo pulidas. Estamos trabajando para mejorarlas <b>poco a poco</b>, versión por versión. Te pedimos un poco de <b>paciencia</b>: cada crítica constructiva cuenta y nos dice por dónde seguir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PESTANAS ============ -->
+  <section id="app">
+    <div class="rv">
+      <div class="kick">Conoce PanaLink</div>
+      <h2 class="sec">La app, el proyecto y quién la hace</h2>
+      <p class="lead">Todo en un solo lugar: qué hace la aplicación, en qué estado va y quién está detrás.</p>
+    </div>
+
+    <div class="tabs rv d1">
+      <div class="tabbar" role="tablist" aria-label="Información de PanaLink">
+        <button id="tab-app" role="tab" aria-selected="true" aria-controls="panel-app" tabindex="0">La app</button>
+        <button id="tab-estado" role="tab" aria-selected="false" aria-controls="panel-estado" tabindex="-1">Estado del proyecto</button>
+        <button id="tab-ingenieria" role="tab" aria-selected="false" aria-controls="panel-ingenieria" tabindex="-1">Ingeniería</button>
+        <button id="tab-comunidad" role="tab" aria-selected="false" aria-controls="panel-comunidad" tabindex="-1">Comunidad</button>
+      </div>
+
+      <!-- ---- panel: la app ---- -->
+      <div class="tabpanel" id="panel-app" role="tabpanel" aria-labelledby="tab-app">
+        <p class="lead wide">PanaLink es una red social y de mensajería hecha en Venezuela. Nació con una idea sencilla: <b>que hablar con los panas sea simple y bonito</b>. Reúne en una sola app lo que normalmente está repartido en cinco.</p>
+
+        <div class="grid">
+          <div class="card rv d1"><span class="ico">💬</span><h3>Chat en tiempo real</h3><p>Mensajes, notas de voz, fotos, vídeos, GIFs y documentos, con estado de envío y lectura.</p></div>
+          <div class="card rv d2"><span class="ico">📞</span><h3>Llamadas</h3><p>Llamadas de voz entre contactos, con historial de entrantes, salientes y perdidas.</p></div>
+          <div class="card rv d3"><span class="ico">✨</span><h3>Momentos</h3><p>Comparte tu día en el muro: fotos, vídeos, audios y textos, con reacciones y comentarios.</p></div>
+          <div class="card rv d4"><span class="ico">⏳</span><h3>Historias</h3><p>Publicaciones que expiran solas a las 24 horas, con quién las vio y reacciones.</p></div>
+          <div class="card rv d1"><span class="ico">🎬</span><h3>Reels con editor</h3><p>Editor de clips con filtros, recortes, transiciones, subtítulos con IA y música.</p></div>
+          <div class="card rv d2"><span class="ico">🎙️</span><h3>Salas de voz</h3><p>Salas para hablar con los panas: asientos, moderación, regalos y efectos de entrada.</p></div>
+          <div class="card rv d3"><span class="ico">🔴</span><h3>Panalink Live</h3><p>Transmite en directo desde el teléfono, con chat en vivo, regalos animados y espectadores.</p></div>
+          <div class="card rv d4"><span class="ico">📺</span><h3>Pana TV</h3><p>Canales en vivo para ver lo que te gusta sin salir de la app.</p></div>
+          <div class="card rv d1"><span class="ico">🎵</span><h3>Playlists</h3><p>Crea listas de música, colabora con otros y escúchalas dentro de la app.</p></div>
+          <div class="card rv d2"><span class="ico">👥</span><h3>Panas y contactos</h3><p>Busca gente, agrega contactos y comparte tu código QR para que te encuentren.</p></div>
+          <div class="card rv d3"><span class="ico">👤</span><h3>Perfil</h3><p>Foto, nombre, colgantes, nivel y todas tus publicaciones en un solo lugar.</p></div>
+          <div class="card rv d4"><span class="ico">🤖</span><h3>Pana AI</h3><p>Una mascota que te acompaña y te ayuda a crear: subtítulos, ideas y descripciones.</p></div>
         </div>
 
-        <p class="thanks">
-            <strong>Gracias por descargar PanaLink y por acompañarnos en el camino.</strong> 🇻🇪
-            Sin el apoyo de la comunidad este proyecto no seguiría creciendo.
+        <h3 class="sub-sec rv d1">Así se ve por dentro</h3>
+        <p class="lead rv d1">Ilustraciones de cada pantalla, con el mismo lenguaje visual de la app.</p>
+        <div class="shots rv d2">
+          <figure><img src="/assets/screens/chat.svg" alt="Pantalla de chats de PanaLink" loading="lazy"><figcaption>Chats</figcaption></figure>
+          <figure><img src="/assets/screens/llamadas.svg" alt="Pantalla de llamadas" loading="lazy"><figcaption>Llamadas</figcaption></figure>
+          <figure><img src="/assets/screens/momentos.svg" alt="Muro de Momentos" loading="lazy"><figcaption>Momentos</figcaption></figure>
+          <figure><img src="/assets/screens/historias.svg" alt="Visor de Historias" loading="lazy"><figcaption>Historias</figcaption></figure>
+          <figure><img src="/assets/screens/reels.svg" alt="Reproductor de Reels" loading="lazy"><figcaption>Reels</figcaption></figure>
+          <figure><img src="/assets/screens/salas-voz.svg" alt="Sala de voz" loading="lazy"><figcaption>Salas de voz</figcaption></figure>
+          <figure><img src="/assets/screens/live.svg" alt="Transmisión en vivo" loading="lazy"><figcaption>Panalink Live</figcaption></figure>
+          <figure><img src="/assets/screens/panatv.svg" alt="Pana TV" loading="lazy"><figcaption>Pana TV</figcaption></figure>
+          <figure><img src="/assets/screens/playlists.svg" alt="Playlists de música" loading="lazy"><figcaption>Playlists</figcaption></figure>
+          <figure><img src="/assets/screens/contactos.svg" alt="Lista de contactos" loading="lazy"><figcaption>Panas</figcaption></figure>
+          <figure><img src="/assets/screens/perfil.svg" alt="Perfil de usuario" loading="lazy"><figcaption>Perfil</figcaption></figure>
+          <figure><img src="/assets/screens/pana-ai.svg" alt="Asistente Pana AI" loading="lazy"><figcaption>Pana AI</figcaption></figure>
+        </div>
+        <p class="shots-note rv d3">Son ilustraciones hechas para este sitio, no capturas con datos de usuarios reales.</p>
+
+        <h3 class="sub-sec">Lo que la hace distinta</h3>
+        <ul class="ticks">
+          <li><b>Es venezolana</b> y está pensada para nuestra realidad: funciona con conexiones lentas y prioriza el ahorro de datos.</li>
+          <li><b>Offline primero:</b> los mensajes se guardan en el teléfono y se sincronizan cuando vuelve la señal.</li>
+          <li><b>Sin publicidad invasiva</b> ni cobros para lo básico: chatear, publicar y ver contenido.</li>
+          <li><b>Se construye con la gente:</b> lo que reportan los usuarios entra en la siguiente versión.</li>
+        </ul>
+      </div>
+
+      <!-- ---- panel: estado ---- -->
+      <div class="tabpanel" id="panel-estado" role="tabpanel" aria-labelledby="tab-estado" hidden>
+        <p class="lead wide">Transparencia total: esto es lo que ya está listo, lo que estamos puliendo y lo que viene. Somos un equipo pequeño, así que vamos <b>poco a poco</b>.</p>
+
+        <div class="beta-note">
+          <span class="tag">🧪 Modo beta de producción</span>
+          <p>Las funciones marcadas con <b>🔧 En mejora</b> y <b>🧪 Experimental</b> están en <b>modo beta de producción</b>: ya se pueden usar, pero todavía no están terminadas ni del todo pulidas. Estamos trabajando en ellas y mejorando poco a poco con cada versión. <b>Gracias por la paciencia</b>: cada crítica constructiva cuenta.</p>
+        </div>
+
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr><th>Área</th><th>Estado</th><th>Detalle</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Chat</strong></td><td>✅ Funcionando</td><td>Mensajes, multimedia, estados de entrega y lectura, notificaciones.</td></tr>
+              <tr><td><strong>Momentos</strong></td><td>✅ Funcionando</td><td>Muro e historias de 24 h, reacciones y comentarios.</td></tr>
+              <tr><td><strong>Reels</strong></td><td>🔧 En mejora</td><td>Reproducción y editor listos; seguimos afinando el algoritmo de recomendación.</td></tr>
+              <tr><td><strong>Salas de voz y Live</strong></td><td>🔧 En mejora</td><td>Funcionan; se siguen ajustando cámara y estabilidad.</td></tr>
+              <tr><td><strong>Pana TV</strong></td><td>🔧 En mejora</td><td>Catálogo de canales activo; mejorando tiempos de carga.</td></tr>
+              <tr><td><strong>Pana AI</strong></td><td>🧪 Experimental</td><td>Subtítulos, ideas y descripciones. Depende de cuota gratuita de IA.</td></tr>
+              <tr><td><strong>Llamadas de voz</strong></td><td>🔧 En mejora</td><td>Base funcional; calidad en ajuste.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="sub-sec">Cómo se actualiza</h3>
+        <p class="lead wide">PanaLink incluye <b>actualización automática (OTA)</b>: cuando hay una versión nueva, la propia app te avisa y la instalas sin volver a esta web. Si la actualización corrige un fallo crítico, puede pedirte que la instales de inmediato.</p>
+
+        <h3 class="sub-sec">Compromiso</h3>
+        <ul class="ticks">
+          <li>Publicamos <b>qué cambió</b> en cada versión, sin letra pequeña.</li>
+          <li>Ninguna versión se publica sin probarse antes en teléfonos reales.</li>
+          <li>Si algo se rompe, se corrige y se avisa. No se esconde.</li>
+        </ul>
+      </div>
+
+      <!-- ---- panel: ingenieria ---- -->
+      <div class="tabpanel" id="panel-ingenieria" role="tabpanel" aria-labelledby="tab-ingenieria" hidden>
+        <p class="lead wide">PanaLink es una app Android nativa. Nada de plantillas: cada pieza se eligió por lo que hacía falta, pensando en teléfonos de gama media y redes inestables.</p>
+
+        <div class="grid">
+          <div class="card rv d1"><span class="ico">⚙️</span><h3>Android nativo</h3><p>Kotlin y Jetpack Compose. Interfaz fluida y consumo de batería y datos contenido.</p></div>
+          <div class="card rv d2"><span class="ico">🗄️</span><h3>Offline primero</h3><p>Base de datos local (Room) + sincronización: la app sirve aunque no haya señal.</p></div>
+          <div class="card rv d3"><span class="ico">☁️</span><h3>Backend en tiempo real</h3><p>Supabase para datos, autenticación y eventos en vivo entre usuarios.</p></div>
+          <div class="card rv d4"><span class="ico">🎥</span><h3>Vídeo y CDN propio</h3><p>Motor de reproducción propio con caché en disco y un CDN para servir el contenido rápido.</p></div>
+          <div class="card rv d1"><span class="ico">🔔</span><h3>Notificaciones ricas</h3><p>Push con avatar, respuesta rápida y agrupación por conversación.</p></div>
+          <div class="card rv d2"><span class="ico">🧠</span><h3>IA integrada</h3><p>Servicios de IA para subtítulos, ideas y asistencia dentro de los editores.</p></div>
+        </div>
+
+        <h3 class="sub-sec">Cómo trabajamos</h3>
+        <ul class="ticks">
+          <li><b>Sin regresiones:</b> cada cambio se revisa contra una lista funcional antes de publicarse.</li>
+          <li><b>Diagnóstico antes que suposición:</b> los fallos se miden contra el servidor real, no se adivinan.</li>
+          <li><b>Cambios pequeños y frecuentes:</b> versiones numeradas, con historial público.</li>
+          <li><b>Documentado:</b> las decisiones y sus motivos quedan escritos para no repetir errores.</li>
+        </ul>
+
+        <h3 class="sub-sec">Ficha técnica</h3>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+            <tbody>
+              <tr><td>Plataforma</td><td><strong>Android 7.0 (Nougat) o superior</strong></td></tr>
+              <tr><td>Arquitecturas</td><td>arm64-v8a · armeabi-v7a</td></tr>
+              <tr><td>Lenguaje</td><td>Kotlin (Jetpack Compose)</td></tr>
+              <tr><td>Distribución</td><td>APK directo con actualización automática (OTA)</td></tr>
+              <tr><td>Tamaño aproximado</td><td>~84 MB</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ---- panel: comunidad ---- -->
+      <div class="tabpanel" id="panel-comunidad" role="tabpanel" aria-labelledby="tab-comunidad" hidden>
+        <p class="lead wide">PanaLink no la hace una sola persona. Se hace entre todos: quien la usa y reporta un fallo está aportando tanto como quien escribe código.</p>
+
+        <div class="grid">
+          <div class="card rv d1"><span class="ico">🐞</span><h3>Reporta un fallo</h3><p>Cuéntanos qué pasó, en qué teléfono y qué esperabas. Con eso ya podemos arreglarlo.</p></div>
+          <div class="card rv d2"><span class="ico">💡</span><h3>Propón una idea</h3><p>¿Se te ocurre una función o una mejora? Escríbenos: las buenas ideas entran al plan.</p></div>
+          <div class="card rv d3"><span class="ico">🗣️</span><h3>Da tu crítica</h3><p>La crítica honesta es la que sirve. Dinos qué no te gusta y por qué.</p></div>
+          <div class="card rv d4"><span class="ico">🤝</span><h3>Colabora</h3><p>Si programas, diseñas o traduces y quieres sumar, hay sitio para ti.</p></div>
+        </div>
+
+        <div class="actions start rv d2" style="margin-top:30px">
+          <a class="btn btn-main" href="/contacto.html">Enviar un aporte</a>
+          <a class="btn btn-ghost" href="/colabora.html">Quiero colaborar</a>
+        </div>
+
+        <p class="thanks rv d3">Gracias por descargar PanaLink y por apoyar el proyecto 🇻🇪
+          <small>Sin la comunidad esto no seguiría creciendo.</small>
         </p>
-    </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section>
+    <div class="cta-band rv">
+      <h2>¿La pruebas?</h2>
+      <p class="lead" style="margin:10px auto 0;max-width:520px">Descarga el APK oficial, úsala como quieras y cuéntanos qué te parece. Es gratis.</p>
+      <div class="actions">
+        <a class="btn btn-main" href="/descargar.html">⬇ Descargar PanaLink</a>
+        <a class="btn btn-ghost" href="/historia.html">Leer la historia</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="cols">
+    <div>
+      <div class="brandline"><span class="mark" style="font-size:1.1rem"><span class="p" style="width:30px;height:30px;font-size:1rem">P</span>PanaLink</span></div>
+      <p style="color:var(--muted);font-size:.9rem;margin:0">Mensajería, momentos y comunidad. Aplicación venezolana en desarrollo activo, hecha con la comunidad.</p>
+    </div>
+    <div>
+      <h4>Sitio</h4>
+      <div class="lk">
+        <a href="/">Inicio</a>
+        <a href="/historia.html">Historia</a>
+        <a href="/colabora.html">Colabora</a>
+        <a href="/descargar.html">Descargar</a>
+      </div>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <div class="lk">
+        <a href="mailto:andresaguiar2022@gmail.com">andresaguiar2022@gmail.com</a>
+        <a href="tel:+584262780191">0426-278-0191</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/terminos.html">Términos</a>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    © <span id="yr">2026</span> PanaLink — hecho con cariño desde Venezuela 🇻🇪
+    <div class="ai">Sitio mantenido con ayuda de un agente de IA (OpenHands).</div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
 </html>
-

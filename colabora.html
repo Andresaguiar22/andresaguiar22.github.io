@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colabora con PanaLink — PanaLink</title>
+<meta name="description" content="PanaLink busca colaboradores: programadores, diseñadores, traductores, testers y gente con ideas. Aporta tu conocimiento al proyecto.">
+<meta name="theme-color" content="#0B0F16">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%235CF8B0'/><text x='50' y='72' font-size='64' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%230B0F16'>P</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="atmos" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="top">
+  <div class="in">
+    <a class="mark" href="/"><span class="p">P</span>PanaLink</a>
+    <span class="sp"></span>
+    <span class="lk">
+      <a href="/">Inicio</a>
+      <a href="/historia.html">Historia</a>
+      <a href="/colabora.html" aria-current="page">Colabora</a>
+      <a href="/contacto.html">Contacto</a>
+      <a class="cta-sm" href="/descargar.html">Descargar</a>
+    </span>
+  </div>
+</nav>
+
+<div class="wrap narrow">
+
+  <header class="hero left">
+    <span class="eyebrow rv"><span class="dot"></span>Se busca gente con ganas</span>
+    <h1 class="page rv d1">Colabora con PanaLink</h1>
+    <p class="sub rv d2">Si sabes hacer algo y quieres aportarlo a un proyecto venezolano que está creciendo, <b>este es tu sitio</b>.</p>
+  </header>
+
+  <section style="padding-top:14px">
+    <div class="dev rv">
+      <h2>Por qué buscamos ayuda</h2>
+      <p>PanaLink es hoy un proyecto sostenido por <b>una sola persona</b> haciendo el trabajo de muchas. Eso funciona —y ha funcionado bastante bien— pero tiene un techo claro: no se puede construir una red social completa sin más manos.</p>
+      <p>No hay presupuesto para contratar. Lo que hay es <b>un proyecto real, con usuarios reales y problemas interesantes que resolver</b>. Si te sirve aprender, practicar, tener algo tuyo en producción o simplemente aportar a algo que se usa en Venezuela, aquí hay sitio.</p>
+      <p style="margin-bottom:0">No hace falta que seas experto ni que te comprometas a un horario. Hace falta que <b>sepas hacer algo y quieras hacerlo bien</b>.</p>
+    </div>
+
+    <h2 class="sec rv d1" style="margin-top:48px">En qué puedes aportar</h2>
+    <p class="lead rv d1">Estas son las áreas donde hoy más se necesita. Si lo tuyo no está aquí, escríbenos igual: siempre hay algo.</p>
+
+    <div class="grid">
+      <div class="card rv d1"><span class="ico">👨‍💻</span><h3>Programación Android</h3><p>Kotlin y Jetpack Compose. Interfaz, reproductores de vídeo, optimización en teléfonos de gama media.</p></div>
+      <div class="card rv d2"><span class="ico">🛠️</span><h3>Backend y datos</h3><p>Base de datos, consultas, seguridad y servicios en la nube. Que todo aguante sin caerse.</p></div>
+      <div class="card rv d3"><span class="ico">🎨</span><h3>Diseño de interfaz</h3><p>Que la app se vea y se sienta bien: pantallas, iconos, animaciones, coherencia visual.</p></div>
+      <div class="card rv d4"><span class="ico">🌐</span><h3>Web</h3><p>Este sitio, páginas de descarga, herramientas internas y todo lo que acompañe a la app.</p></div>
+      <div class="card rv d1"><span class="ico">🧪</span><h3>Pruebas (QA)</h3><p>Probar en teléfonos distintos, encontrar fallos y describirlos bien. Es de las cosas más valiosas.</p></div>
+      <div class="card rv d2"><span class="ico">🌎</span><h3>Traducción y textos</h3><p>Revisar los textos de la app, mejorarlos y prepararlos para otros idiomas.</p></div>
+      <div class="card rv d3"><span class="ico">📣</span><h3>Comunidad y difusión</h3><p>Ayudar a que más gente conozca la app y a atender lo que reporta.</p></div>
+      <div class="card rv d4"><span class="ico">🧠</span><h3>Ideas y críticas</h3><p>Proponer funciones, detectar lo que no funciona y decirlo claro. Sin esto lo demás va a ciegas.</p></div>
+    </div>
+
+    <h2 class="sec rv d1" style="margin-top:48px">Cómo funciona</h2>
+    <ol class="steps">
+      <li class="rv d1"><span><b>Escríbenos.</b> Cuéntanos qué sabes hacer y en qué te gustaría aportar.</span></li>
+      <li class="rv d1"><span><b>Vemos en qué encajas.</b> No todo el mundo entra por el mismo lado; buscamos dónde tu aporte sirva de verdad.</span></li>
+      <li class="rv d2"><span><b>Empiezas con algo concreto.</b> Una tarea acotada, con contexto y sin presión de tiempo.</span></li>
+      <li class="rv d3"><span><b>Se publica.</b> Tu aporte llega a los usuarios en una versión real y queda registrado en el proyecto.</span></li>
+    </ol>
+
+    <h3 class="sub-sec rv d1">Lo que pedimos</h3>
+    <ul class="ticks">
+      <li><b>Honestidad:</b> decir qué sabes y qué no. Es más útil que fingir.</li>
+      <li><b>Cuidado con lo que se publica:</b> aquí se prueba antes de sacar algo a la luz.</li>
+      <li><b>Respeto por los usuarios:</b> la app la usa gente real; sus datos y su tiempo importan.</li>
+    </ul>
+
+    <h3 class="sub-sec rv d1">Lo que no pedimos</h3>
+    <ul class="ticks">
+      <li><b>Dinero.</b> Nunca.</li>
+      <li><b>Exclusividad ni horarios.</b> Aporta cuando puedas.</li>
+      <li><b>Ser experto.</b> Con ganas de aprender y hacer las cosas bien, sobra.</li>
+    </ul>
+
+    <div class="panel rv d2" style="margin-top:34px">
+      <h3>¿Te interesa?</h3>
+      <p>Escríbenos contando qué sabes hacer y en qué te gustaría aportar. Si tienes trabajo previo que mostrar, mejor todavía.</p>
+      <div class="actions start" style="margin-top:20px">
+        <a class="btn btn-main" href="mailto:andresaguiar2022@gmail.com?subject=Quiero%20colaborar%20con%20PanaLink">✉️ Escribir al creador</a>
+        <a class="btn btn-ghost" href="tel:+584262780191">📞 0426-278-0191</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="cols">
+    <div>
+      <div class="brandline"><span class="mark" style="font-size:1.1rem"><span class="p" style="width:30px;height:30px;font-size:1rem">P</span>PanaLink</span></div>
+      <p style="color:var(--muted);font-size:.9rem;margin:0">Mensajería, momentos y comunidad. Aplicación venezolana en desarrollo activo, hecha con la comunidad.</p>
+    </div>
+    <div>
+      <h4>Sitio</h4>
+      <div class="lk">
+        <a href="/">Inicio</a>
+        <a href="/historia.html">Historia</a>
+        <a href="/colabora.html">Colabora</a>
+        <a href="/descargar.html">Descargar</a>
+      </div>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <div class="lk">
+        <a href="mailto:andresaguiar2022@gmail.com">andresaguiar2022@gmail.com</a>
+        <a href="tel:+584262780191">0426-278-0191</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/terminos.html">Términos</a>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    © <span id="yr">2026</span> PanaLink — hecho con cariño desde Venezuela 🇻🇪
+    <div class="ai">Sitio mantenido con ayuda de un agente de IA (OpenHands).</div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
